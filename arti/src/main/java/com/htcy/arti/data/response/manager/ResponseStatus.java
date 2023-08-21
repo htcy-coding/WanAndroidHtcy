@@ -20,18 +20,22 @@ import static com.htcy.arti.data.response.manager.ResultSource.NETWORK;
 
 /**
  * Create by KunMinX at 19/10/11
+ *  "errorCode": -1,
+ *     "errorMsg": "账号密码不匹配！"
  */
 public class ResponseStatus {
 
-  private String responseCode = "";
+  private String errorMsg = "";
   private boolean success = true;
+  private int errorCode;
+
   private Enum<ResultSource> source = NETWORK;
 
   public ResponseStatus() {
   }
 
   public ResponseStatus(String responseCode, boolean success) {
-    this.responseCode = responseCode;
+    this.errorMsg = responseCode;
     this.success = success;
   }
 
@@ -41,7 +45,7 @@ public class ResponseStatus {
   }
 
   public String getResponseCode() {
-    return responseCode;
+    return errorMsg;
   }
 
   public boolean isSuccess() {

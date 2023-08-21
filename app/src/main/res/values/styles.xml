@@ -1,0 +1,41 @@
+<resources>
+
+    <style name="StateView_Center">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+
+    </style>
+
+    <style name="StateView_Top">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+
+    </style>
+
+    <style name="ActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?colorMainOrSurface</item>
+
+        <item name="ab_bottomLineHeight">@dimen/action_bar_bottom_line_height</item>
+        <item name="ab_statusBarColor">?colorTransparent</item>
+        <item name="ab_titleBarHeight">@dimen/action_bar_height</item>
+    </style>
+
+    <style name="ActionBar.Common">
+        <item name="abc_titleTextColor">?colorOnMainOrSurface</item>
+        <item name="abc_leftIconColor">?colorOnMainOrSurface</item>
+        <item name="abc_leftTextColor">?colorOnMainOrSurface</item>
+        <item name="abc_rightIconColor">?colorOnMainOrSurface</item>
+        <item name="abc_rightTextColor">?colorOnMainOrSurface</item>
+    </style>
+
+    <style name="ActionBar.Common.Back">
+        <item name="abc_leftIconRes">@drawable/ic_back</item>
+        <item name="abc_leftIconMarginLeft">0dp</item>
+        <item name="abc_leftIconClickToFinish">true</item>
+    </style>
+
+
+
+</resources>

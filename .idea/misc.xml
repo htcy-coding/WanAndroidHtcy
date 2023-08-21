@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="../../../.gradle/caches/transforms-3/e73c4031c7b1cd03ecdf2f01fd45c7b7/transformed/jetified-actionbarex-3.2.2/res/layout/action_bar.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/drawable/action_search_bg.xml" value="0.287962962962963" />
+        <entry key="app/src/main/res/layout/action_bar_title_bar_common.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/layout/action_bar_title_bar_search.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/layout/action_bar_title_bar_super.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.1788974649368299" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="basic_res/src/main/res/drawable/bg_circle_color_surface.xml" value="0.287962962962963" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

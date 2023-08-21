@@ -5,11 +5,13 @@ import android.app.Activity;
 import android.app.Application;
 import android.app.Application.ActivityLifecycleCallbacks;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 
 import java.lang.reflect.Field;
@@ -89,6 +91,27 @@ public final class Utils {
         sApplication = app;
         sApplication.registerActivityLifecycleCallbacks(ACTIVITY_LIFECYCLE);
       }
+    }
+  }
+
+  @Nullable
+  public static Activity getActivity(Context context) {
+    if (context instanceof Activity) {
+      return (Activity) context;
+    }
+    if (context instanceof ContextWrapper) {
+      Context baseContext = ((ContextWrapper) context).getBaseContext();
+      if (baseContext instanceof Activity) {
+        return (Activity) baseContext;
+      }
+    }
+    return null;
+  }
+
+  public static void finishActivity(Context context){
+    Activity activity = getActivity(context);
+    if (activity != null && !activity.isFinishing()) {
+      activity.finish();
     }
   }
 

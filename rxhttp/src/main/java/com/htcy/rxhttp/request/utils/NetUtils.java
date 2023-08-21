@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import per.goweii.rxhttp.core.RxHttp;
+import com.htcy.rxhttp.core.RxHttp;
 
 /**
  * 描述：判断网络的辅助类

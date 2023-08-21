@@ -4,12 +4,16 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     defaultConfig {
+        configurations.all {
+            resolutionStrategy { force 'androidx.core:core-ktx:1.7.0' }
+            exclude group: 'com.google.guava', module: 'listenablefuture'
+        }
         applicationId "com.htcy.wanandroid"
         minSdk 23
-        targetSdk 31
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -21,6 +25,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -34,10 +45,25 @@ android {
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation project(path: ':basic_res')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // 完全引入
+    implementation 'com.github.goweii:ActionBarEx:3.2.2'
+
+    // 只引入ActionBarEx
+    implementation 'com.github.goweii.ActionBarEx:actionbarex:3.2.2'
+    // 引入ActionBarCommon/Search/Super，依赖于ActionBarEx
+    implementation 'com.github.goweii.ActionBarEx:actionbarex-common:3.2.2'
+    implementation 'com.github.goweii:SwipeBack:2.0.5'
+
+    implementation 'com.github.goweii:PercentImageView:1.0.2'
+    implementation project(":arti")
+    implementation project(":rxhttp")
+
+
 }

@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WanAndroid">
+<!--        <activity-->
+<!--            android:name=".ui.page.AuthActivity"-->
+<!--            android:exported="true" />-->
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.page.AuthActivity"
+            android:configChanges="keyboard|keyboardHidden|screenSize|fontScale|density|orientation"
+            android:theme="@style/AppTheme.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

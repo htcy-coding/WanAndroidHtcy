@@ -3,10 +3,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
+        maven { url 'https://www.jitpack.io' }
     }
 }
 rootProject.name = "WanAndroid"
 include ':app'
 include ':arti'
 include ':rxhttp'
+include ':basic_res'

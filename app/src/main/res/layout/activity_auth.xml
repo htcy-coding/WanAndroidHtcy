@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorLoginBg">
+
+    <com.htcy.wanandroid.ui.view.ParallaxStackLayout
+        android:id="@+id/rl_input"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/action_bar_height">
+
+        <com.htcy.wanandroid.ui.view.PercentImageView
+            android:id="@+id/iv_circle_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="-170dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginRight="-170dp"
+            android:alpha="0.8"
+            android:background="@drawable/bg_solid_round_color_surface_radius_max"
+            app:layout_parallaxDeviationX="-40dp"
+            app:layout_parallaxDeviationY="-20dp"
+            app:piv_basics="width"
+            app:piv_percent="1" />
+
+        <com.htcy.wanandroid.ui.view.PercentImageView
+            android:id="@+id/iv_circle_2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="-170dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginRight="-170dp"
+            android:alpha="0.8"
+            android:background="@drawable/bg_solid_round_color_surface_radius_max"
+            app:layout_parallaxDeviationX="40dp"
+            app:layout_parallaxDeviationY="-20dp"
+            app:piv_basics="width"
+            app:piv_percent="1" />
+
+        <com.htcy.wanandroid.ui.view.LogoAnimView
+            android:id="@+id/lav"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            app:layout_parallaxDeviationX="30dp"
+            app:layout_parallaxDeviationY="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:text="欢迎使用"
+            android:textColor="?colorOnMainOrSurface"
+            android:textSize="@dimen/text_headline"
+            android:textStyle="bold"
+            app:layout_parallaxDeviationX="20dp"
+            app:layout_parallaxDeviationY="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="135dp"
+            android:alpha="0.8"
+            android:text="本APP由Goweii独立开发"
+            android:textColor="?colorOnMainOrSurface"
+            android:textSize="@dimen/text_notes"
+            app:layout_parallaxDeviationX="10dp"
+            app:layout_parallaxDeviationY="5dp" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="170dp"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+    </com.htcy.wanandroid.ui.view.ParallaxStackLayout>
+
+    <com.htcy.wanandroid.ui.view.ActionBarCommon
+        android:id="@+id/abc"
+        style="@style/ActionBar.Common"
+        android:background="?colorTransparent"
+        app:abc_leftIconClickToFinish="true"
+        app:abc_leftIconRes="@drawable/ic_close" />
+
+</RelativeLayout>

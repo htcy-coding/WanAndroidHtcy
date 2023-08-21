@@ -1,9 +1,9 @@
 ext {
     android = [
-            compileSdkVersion: 30,
+            compileSdkVersion: 32,
             minSdkVersion    : 21,
             targetSdkVersion : 30,
-            buildToolsVersion: "30.0.3",
+            buildToolsVersion: "32.0.1",
             versionCode      : 78,
             versionName      : "2.2.5", //-beta1
     ]
@@ -19,7 +19,7 @@ ext {
 
     versions = [
             androidx_core         : "1.2.0",
-            androidx_appcompat    : "1.2.0",
+            androidx_appcompat    : "1.0.0",
             androidx_arch         : "2.5.1",
             androidx_annotation   : "1.1.0",
             androidx_multidex     : "2.0.1",
@@ -111,7 +111,6 @@ ext {
             roomRuntime                  : "androidx.room:room-runtime:${versions.androidx_room}",
             roomCompiler                 : "androidx.room:room-compiler:${versions.androidx_room}",
             roomKtx                      : "androidx.room:room-ktx:${versions.androidx_room}",
-            constraintLayout             : "com.android.support.constraint:constraint-layout:${versions.constraintLayout}",
             design                       : "com.google.android.material:material:1.0.0",
             flexbox                      : "com.google.android:flexbox:${versions.flexbox}",
             localbroadcastmanager        : "androidx.localbroadcastmanager:localbroadcastmanager:${versions.localbroadcastmanager}",
