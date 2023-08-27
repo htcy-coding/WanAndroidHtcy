@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlSymmetry">
+
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.htcy.wanandroid.ui.page.LoginFragment.LoginStates" />
+
+<!--        <variable-->
+<!--            name="click"-->
+<!--            type="com.kunminx.puremusic.ui.page.LoginFragment.ClickProxy" />-->
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_go_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:rotation="180"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_next"
+                android:tint="?colorIconMain"
+                android:visibility="invisible"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:text="去注册"
+                android:textColor="?colorTextMain"
+                android:textSize="@dimen/text_content" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:rotation="0"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_next"
+                android:tint="?colorIconMain"
+                tools:ignore="UseAppTint" />
+
+        </LinearLayout>
+
+        <com.htcy.wanandroid.ui.view.AccountInputView
+            android:id="@+id/piv_login_account"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="60dp" />
+
+        <com.htcy.wanandroid.ui.view.PasswordInputView
+            android:id="@+id/piv_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_below="@+id/piv_login_account"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="60dp" />
+
+        <com.htcy.wanandroid.ui.view.SubmitView
+            android:id="@+id/sv_login"
+            style="@style/ButtonMain"
+            android:layout_below="@+id/piv_login_password"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="60dp"
+            android:text="登录"
+            app:sv_bindEditText1="@+id/piv_login_account"
+            app:sv_bindEditText2="@+id/piv_login_password" />
+
+    </RelativeLayout>
+</layout>

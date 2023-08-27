@@ -1,11 +1,14 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
     compileSdk 32
-
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         configurations.all {
             resolutionStrategy { force 'androidx.core:core-ktx:1.7.0' }
@@ -64,6 +67,5 @@ dependencies {
     implementation 'com.github.goweii:PercentImageView:1.0.2'
     implementation project(":arti")
     implementation project(":rxhttp")
-
 
 }

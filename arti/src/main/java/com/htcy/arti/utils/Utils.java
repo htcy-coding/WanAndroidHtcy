@@ -115,6 +115,13 @@ public final class Utils {
     }
   }
 
+  public static Context getAppContext() {
+    if (sApplication == null) {
+      throw new RuntimeException("Utils未在Application中初始化");
+    }
+    return sApplication;
+  }
+
   /**
    * Return the context of Application object.
    *
