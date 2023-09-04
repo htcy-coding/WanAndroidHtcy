@@ -1,9 +1,16 @@
 package com.htcy.wanandroid.ui.page
 
+import android.content.Context
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.htcy.arti.ui.page.BaseFragment
 import com.htcy.arti.ui.page.StateHolder
 import com.htcy.wanandroid.BR
 import com.htcy.wanandroid.R
+import com.htcy.wanandroid.domain.request.AccountRequester
 import com.kunminx.architecture.ui.page.DataBindingConfig
 import com.kunminx.architecture.ui.state.State
 
@@ -16,20 +23,35 @@ class LoginFragment: BaseFragment() {
     // state-ViewModel 职责仅限于托管、保存和恢复本页面 state，作用域仅限于本页面，
     // result-ViewModel 职责仅限于 "消息分发" 场景承担 "可信源"，作用域依 "数据请求" 或 "跨页通信" 消息分发范围而定
     // 如这么说无体会，详见 https://xiaozhuanlan.com/topic/8204519736
-    private val mStates: LoginStates? = null
-
+    private var mStates: LoginStates? = null
+    private var mAccountRequester: AccountRequester? = null
     //登录
 
-
-
-    override fun initViewModel() {
-//        return new DataBindingConfig(R.layout.fragment_login, BR.vm, mStates)
-//        .addBindingParam(BR.click, new ClickProxy());
+    fun create(): LoginFragment {
+        return LoginFragment()
     }
 
-    override fun getDataBindingConfig(): DataBindingConfig? {
 
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_login, container, false)
+    }
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+    }
+
+    override fun initViewModel() {
+        mStates = getFragmentScopeViewModel(LoginStates::class.java)
+        mAccountRequester = getFragmentScopeViewModel(AccountRequester::class.java)
+    }
+
+        override fun getDataBindingConfig(): DataBindingConfig? {
         //TODO tip 2: DataBinding 严格模式：
         // 将 DataBinding 实例限制于 base 页面中，默认不向子类暴露，
         // 通过这方式，彻底解决 View 实例 Null 安全一致性问题，

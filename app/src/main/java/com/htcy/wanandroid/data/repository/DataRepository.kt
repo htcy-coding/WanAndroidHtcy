@@ -15,31 +15,11 @@
  */
 package com.htcy.wanandroid.data.repository
 
-import android.annotation.SuppressLint
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.kunminx.architecture.data.response.DataResult
-import com.kunminx.architecture.data.response.ResponseStatus
-import com.kunminx.architecture.data.response.ResultSource
-import com.kunminx.architecture.domain.request.AsyncTask
-import com.kunminx.architecture.utils.Utils
-import com.kunminx.puremusic.R
-import com.kunminx.puremusic.data.api.APIs
-import com.kunminx.puremusic.data.api.AccountService
-import com.kunminx.puremusic.data.bean.LibraryInfo
-import com.kunminx.puremusic.data.bean.TestAlbum
-import com.kunminx.puremusic.data.bean.User
-import io.reactivex.Observable
+
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.io.ByteArrayInputStream
-import java.io.ByteArrayOutputStream
-import java.io.IOException
-import java.lang.reflect.Type
 import java.util.concurrent.TimeUnit
 
 /**

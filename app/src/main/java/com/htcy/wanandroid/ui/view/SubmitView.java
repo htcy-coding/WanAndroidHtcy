@@ -11,7 +11,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.widget.AppCompatTextView;
 
-import per.goweii.wanandroid.R;
+import com.htcy.wanandroid.R;
+
 
 /**
  * @author CuiZhen
