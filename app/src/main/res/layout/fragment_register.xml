@@ -3,17 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <data>
-
         <variable
             name="vm"
             type="com.htcy.wanandroid.ui.page.RegisterFragment.RegisterStates" />
-
         <variable
             name="click"
-            type="com.htcy.wanandroid.ui.page.LoginFragment.ClickProxy" />
-
+            type="com.htcy.wanandroid.ui.page.RegisterFragment.ClickProxy" />
     </data>
 
 <RelativeLayout
@@ -63,6 +59,7 @@
         android:id="@+id/piv_register_account"
         android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:text="@{vm}"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="100dp"
         android:layout_marginRight="60dp" />
@@ -92,6 +89,7 @@
         android:layout_marginLeft="60dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="60dp"
+        android:onClick="@{()->click.startRegister()}"
         android:text="注册"
         app:sv_bindEditText1="@+id/piv_register_account"
         app:sv_bindEditText2="@+id/piv_register_password"

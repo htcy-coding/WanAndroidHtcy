@@ -12,26 +12,18 @@ import com.htcy.wanandroid.databinding.FragmentRegisterBinding
 import com.htcy.wanandroid.domain.request.AccountRequester
 import com.kunminx.architecture.ui.page.DataBindingConfig
 import com.kunminx.architecture.ui.state.State
+import kotlin.contracts.ExperimentalContracts
+import kotlin.contracts.contract
 
 class RegisterFragment: BaseFragment() {
 
     private var mStates: RegisterStates? = null
     private var mAccountRequester: AccountRequester? = null
+    private var mBinding: FragmentRegisterBinding? = null;
 
-    var binding: FragmentRegisterBinding? = null;
 
     fun create(): RegisterFragment {
         return RegisterFragment()
-    }
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentRegisterBinding.inflate(inflater,container,false)
-        return binding!!.root
     }
 
     override fun initViewModel() {
@@ -43,9 +35,40 @@ class RegisterFragment: BaseFragment() {
       return  mStates?.let { DataBindingConfig(R.layout.fragment_register, BR.vm, it) }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mBinding = binding as? FragmentRegisterBinding
+
+
+    }
+
+    inner class ClickProxy {
+//        fun showRegister() {
+//            (mActivity as AuthActivity).showRegisterView()
+//        }
+
+        fun startRegister(){
+            if (mStates?.name?.get().isNullOrEmpty1())
+
+        }
+
+
+
+    }
+
     class RegisterStates : StateHolder() {
         val name = State("")
         val password = State("")
+        val rePassword = State("")
         val loadingVisible = State(false)
     }
+
+
+    fun String.lastChar(): Char = this.get(this.length - 1)
+
+     fun CharSequence?.isNullOrEmpty1(): Boolean {
+        return this == null || this.length == 0
+    }
+
+
 }

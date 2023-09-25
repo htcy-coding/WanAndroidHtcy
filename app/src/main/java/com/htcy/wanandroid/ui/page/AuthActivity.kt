@@ -17,6 +17,7 @@ class AuthActivity: BaseActivity() {
     private var mMessenger: PageMessenger? = null
     private var loginFragment: LoginFragment? = null
     private var registerFragment: RegisterFragment? = null
+    private var mBinding: ActivityAuthBinding? = null
 
     override fun initViewModel() {
         mStates = getActivityScopeViewModel(AuthActivityStates::class.java)
@@ -32,11 +33,19 @@ class AuthActivity: BaseActivity() {
         val adapter = FixedFragmentPagerAdapter(
             supportFragmentManager
         )
-        (binding as ActivityAuthBinding).vp.adapter = adapter
+        mBinding =  binding as ActivityAuthBinding
+        mBinding?.vp?.adapter = adapter
         loginFragment = LoginFragment().create()
         registerFragment = RegisterFragment().create()
         adapter.setFragmentList(loginFragment, registerFragment)
+    }
 
+    fun showRegisterView(){
+        mBinding?.vp?.currentItem = 1
+    }
+
+    fun showLoginView(){
+        mBinding?.vp?.currentItem = 0
     }
 
 
@@ -46,6 +55,8 @@ class AuthActivity: BaseActivity() {
         val allowDrawerOpen = State(true)
 //        val list: State<List<LibraryInfo>> = State<List<LibraryInfo>>(ArrayList<Any>())
     }
+
+
 
 
 }
